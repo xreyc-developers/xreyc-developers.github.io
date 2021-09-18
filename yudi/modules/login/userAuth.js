@@ -19,10 +19,10 @@ export async function loginUser(id) {
     // AUTHENTICATE USER
     const authResponse = await signInWithEmailAndPassword(auth, email, password);
     const loggedUser = authResponse.user;
-    localStorage.setItem('uid', loggedUser.uid);
-    localStorage.setItem('accessToken', loggedUser.accessToken);
-    localStorage.setItem('refreshToken', loggedUser.stsTokenManager.refreshToken);
-    localStorage.setItem('loggedIn', new Date());
+    localStorage.removeItem('uid');
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    localStorage.removeItem('loggedIn');
     setTimeout(() => {
       popup.style.display = "none";
       window.location.replace(url + "pages/projects/");
@@ -35,13 +35,18 @@ export async function loginUser(id) {
 /* LOGOUT */
 export async function logoutUser() {
   try{
-    localStorage.removeItem('uid');
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
-    localStorage.removeItem('loggedIn');
   } catch(err) {
     console.log(err);
   }
 }
 
-/* CHECK AUTHENTICATION */
+/* CHECK AUTH */
+export async function checkAuth() {
+  try {
+    auth.onAuthStateChanged(function(user) {
+      if (!user) window.location.replace(url);
+    });
+  } catch(err) {
+    console.log(err);
+  }
+}
