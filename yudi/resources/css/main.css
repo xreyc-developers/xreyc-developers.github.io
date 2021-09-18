@@ -51,11 +51,14 @@ section {
   border-radius: 100px;
   width: 150px;
 }
-.user-selection-card > div {
+.user-selection-name {
   margin-top: 20px;
   font-size: 20px;
   font-weight: bold;
   color: #333;
+}
+.user-selection-button-wrap {
+  margin-top: 5px;
 }
 .user-selection-card > div > button {
   margin: 10px auto 20px auto;

@@ -14,13 +14,14 @@
   box-shadow: 0.5px 0.5px 10px var(--color-yellow);
 }
 .btn-primary {
-  background-color: #fff;
+  border: 1px solid var(--color-yellow);
+  background-color: var(--color-yellow);
   color: #444;
-  border: 1px solid rgba(000,000,000,0.1);
 }
 .btn-primary:hover {
   border: 1px solid var(--color-yellow);
   background-color: var(--color-yellow);
+  box-shadow: 0.5px 0.5px 10px var(--color-yellow);
   font-weight: bold;
   color: var(--color-grey-1);
 }

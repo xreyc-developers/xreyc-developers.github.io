@@ -1,4 +1,4 @@
-import { loginUser } from './modules/login/loginUser.js';
+import { loginUser } from './modules/login/userAuth.js';
 
 const APP = (function() {
   document.addEventListener('DOMContentLoaded',init);
