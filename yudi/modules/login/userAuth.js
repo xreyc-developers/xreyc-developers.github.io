@@ -7,6 +7,7 @@ const auth = getAuth();
 const url = window.location.origin + "/yudi/";
 const popup = document.querySelector('div.popup-container');
 
+/* LOGIN */
 export function loginUser(id) {
   popup.style.display = "block";
   fetch('./modules/login/users.json')
@@ -36,4 +37,12 @@ export function loginUser(id) {
     .catch((err) => {
       console.log("Something went wrong.");
     })
+}
+
+/* LOGOUT */
+export function logoutUser() {
+  localStorage.removeItem('uid');
+  localStorage.removeItem('accessToken');
+  localStorage.removeItem('refreshToken');
+  localStorage.removeItem('loggedIn');
 }
