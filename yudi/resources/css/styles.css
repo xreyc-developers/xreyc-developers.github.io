@@ -1,0 +1,62 @@
+:root {
+  --color-background: #fdfbff;
+  --color-white: #ffffff;
+  --color-violet: #ad63ad;
+  --color-yellow: #ffd903;
+  --color-grey-1: #444444;
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  background-color: var(--color-background);
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+/* HEADER */
+.main-page-header {
+  padding: 20px;
+  text-align: center;
+  background-color: var(--color-white);
+  box-shadow: 1px 3px 2px rgba(000,000,000,0.02);
+}
+
+.logo {
+  height: 25px;
+}
+
+/* CONTENT */
+section {
+  margin: 20px 40px 0px 40px;
+}
+
+/* MAIN PAGE */
+.user-selection-title {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 40px;
+}
+.user-selection-container {
+  margin-top: 40px;
+}
+.user-selection-card {
+  padding: 20px;
+  text-align: center;
+}
+.user-selection-card > img {
+  margin: 20px auto 0px auto;
+  border-radius: 100px;
+  width: 150px;
+}
+.user-selection-card > div {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+.user-selection-card > div > button {
+  margin: 10px auto 20px auto;
+  font-size: 20px;
+  width: 150px;
+}
