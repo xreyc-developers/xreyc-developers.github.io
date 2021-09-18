@@ -4,6 +4,7 @@
   --color-violet: #ad63ad;
   --color-yellow: #ffd903;
   --color-grey-1: #444444;
+  --color-transparent-black: rgba(000,000,000,0.1);
 }
 
 html, body {

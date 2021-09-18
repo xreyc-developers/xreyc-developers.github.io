@@ -4,6 +4,7 @@ import { firebaseConfig } from '../firebase/firebase-config.js';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+const url = window.location.origin + "/yudi/";
 
 export function loginUser(id) {
   fetch('./modules/login/users.json')
@@ -16,10 +17,12 @@ export function loginUser(id) {
       // LOGIN USER
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          const userLogged = userCredential.user;
-          localStorage.setItem('uid', userLogged.uid);
-          localStorage.setItem('accessToken', userLogged.accessToken);
-          localStorage.setItem('refreshToken', userLogged.stsTokenManager.refreshToken);
+          const loggedUser = userCredential.user;
+          localStorage.setItem('uid', loggedUser.uid);
+          localStorage.setItem('accessToken', loggedUser.accessToken);
+          localStorage.setItem('refreshToken', loggedUser.stsTokenManager.refreshToken);
+          localStorage.setItem('loggedIn', new Date());
+          window.location.replace(url + "pages/projects/");
         })
         .catch((error) => {
           console.log(error.message);
