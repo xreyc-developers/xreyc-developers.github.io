@@ -38,9 +38,10 @@ section {
   font-size: 40px;
 }
 .user-selection-container {
-  margin-top: 40px;
+  margin: 20px auto 40px auto;
 }
 .user-selection-card {
+  margin-top: 20px;
   padding: 20px;
   text-align: center;
 }
