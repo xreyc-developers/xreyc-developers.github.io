@@ -33,7 +33,7 @@ export async function loginUser(id) {
 }
 
 /* LOGOUT */
-export function logoutUser() {
+export async function logoutUser() {
   try{
     localStorage.removeItem('uid');
     localStorage.removeItem('accessToken');
@@ -43,3 +43,5 @@ export function logoutUser() {
     console.log(err);
   }
 }
+
+/* CHECK AUTHENTICATION */
