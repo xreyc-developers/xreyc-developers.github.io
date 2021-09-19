@@ -19,10 +19,6 @@ export async function loginUser(id) {
     // AUTHENTICATE USER
     const authResponse = await signInWithEmailAndPassword(auth, email, password);
     const loggedUser = authResponse.user;
-    localStorage.removeItem('uid');
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
-    localStorage.removeItem('loggedIn');
     setTimeout(() => {
       popup.style.display = "none";
       window.location.replace(url + "pages/projects/");
@@ -35,6 +31,7 @@ export async function loginUser(id) {
 /* LOGOUT */
 export async function logoutUser() {
   try{
+    auth.signOut();
   } catch(err) {
     console.log(err);
   }

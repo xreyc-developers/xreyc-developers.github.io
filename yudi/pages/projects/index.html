@@ -13,13 +13,27 @@
     <link rel="stylesheet" href="../../resources/css/bootstrap.custom.css">
   </head>
   <body>
-
+    <!--HEADER-->
     <header class="main-page-header">
       <img src="../../resources/images/yudi.svg" class="logo">
+      <button type="button" onclick="logoutUser()">Logout</button>
     </header>
 
-    <!--POPUP-->
+    <!--CONTENT-->
+    <section>
+      <div class="page-title">PROJECT</div>
+      <!--TABLE HEADER-->
+      <div class="row">
+        <div class="col-md-3">Name</div>
+        <div class="col-md-3">Created On</div>
+        <div class="col-md-3">Updated On</div>
+        <div class="col-md-3">Status</div>
+      </div>
+      <div class="row" id="projectContentRows"></div>
 
+    </section>
+
+    <!--POPUP-->
     <!--LOADING IN-->
     <div class="popup-container">
       <div class="popup-box">

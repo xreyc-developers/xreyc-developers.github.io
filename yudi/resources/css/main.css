@@ -23,3 +23,13 @@ header {
 .logo {
   height: 25px;
 }
+
+/* CONTENT */
+section {
+  margin: 30px 40px 0px 40px;
+}
+
+.page-title {
+  font-weight: bold;
+  font-size: 30px;
+}
