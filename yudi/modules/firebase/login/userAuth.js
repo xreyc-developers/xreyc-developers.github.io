@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js";
-import { firebaseConfig } from '../firebase/firebase-config.js';
+import { firebaseConfig } from '../firebase-config.js';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
@@ -12,7 +12,7 @@ export async function loginUser(id) {
   try{
     popup.style.display = "block";
     // GET USER FROM JSON
-    const rawUsers =  await fetch('./modules/login/users.json');
+    const rawUsers =  await fetch('./modules/firebase/login/users.json');
     const users = await rawUsers.json();
     const email = users[id].email;
     const password = users[id].password;

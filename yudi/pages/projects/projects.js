@@ -1,6 +1,7 @@
-import { logoutUser, checkAuth } from '../../modules/login/userAuth.js';
-import { createProject } from '../../modules/projects/createProject.js';
-import { getAllProjects } from '../../modules/projects/getProjects.js';
+import { logoutUser, checkAuth } from '../../modules/firebase/login/userAuth.js';
+import { createProject } from '../../modules/firebase/projects/createProject.js';
+import { getAllProjects } from '../../modules/firebase/projects/getProjects.js';
+import { getAllUsers } from '../../modules/firebase/users/getUsers.js';
 import { getMonthByIndex } from '../../modules/static/Date.js';
 window.logoutUser = logoutUser;
 
@@ -13,13 +14,24 @@ const APP = (function() {
     // ADD EVENT
     addEventListeners();
     // GET DATA PREPARATION
-    getInitialData();
+    loadInitialUsers();
+    loadInitialProjects();
   }
   // ADD EVENT LISTENERS
   function addEventListeners() {}
-  // GET DATA
-  async function getInitialData() {
-
+  // LOAD INITIAL USERS
+  async function loadInitialUsers() {
+    const userContentRows = document.querySelector("div.yudi-users");
+    const data = await getAllUsers();
+    let rows = '';
+    data.forEach((doc) => {
+      const rowData = doc.data();
+      rows += `<a><img src="${rowData.profileURL}"></a>`;
+    });
+    userContentRows.innerHTML = rows;
+  }
+  // LOAD INITIAL PROJECTS
+  async function loadInitialProjects() {
     const projectContentRows = document.querySelector("#projectContentRows");
     const data = await getAllProjects();
     let rows = '';
@@ -40,4 +52,5 @@ const APP = (function() {
     });
     projectContentRows.innerHTML = rows;
   }
+
 })()
