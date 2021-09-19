@@ -1,0 +1,17 @@
+/* BOOTSTRAP */
+.row {
+  margin-left: 0px;
+}
+
+/* LOADING */
+#loading1 {
+  margin-top: 20px;
+  width: 900px;
+  text-align: center;
+}
+#loading1 > img {
+  height: 70px;
+}
+#loading1 > div {
+  font-size: 20px;
+}

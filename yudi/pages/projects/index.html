@@ -5,12 +5,11 @@
     <title>YUDI</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../resources/css/main.css">
+    <link rel="stylesheet" href="./projects.css">
     <link rel="stylesheet" href="../../resources/css/popup.css">
     <link rel="stylesheet" href="../../resources/css/bootstrap.custom.css">
+    <script src="https://kit.fontawesome.com/816f920377.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <!--HEADER-->
@@ -22,14 +21,30 @@
     <!--CONTENT-->
     <section>
       <div class="page-title">PROJECT</div>
-      <!--TABLE HEADER-->
-      <div class="row">
-        <div class="col-md-3">Name</div>
-        <div class="col-md-3">Created On</div>
-        <div class="col-md-3">Updated On</div>
-        <div class="col-md-3">Status</div>
+
+      <!--USERS-->
+      <div class="yudi-users">
+        <a><img src="https://randomuser.me/api/portraits/men/15.jpg"></a>
+        <a><img src="https://randomuser.me/api/portraits/men/15.jpg"></a>
+        <a><img src="https://randomuser.me/api/portraits/men/15.jpg"></a>
+        <a><img src="https://randomuser.me/api/portraits/men/15.jpg"></a>
       </div>
-      <div class="row" id="projectContentRows"></div>
+
+      <!--TABLE-->
+      <!--TABLE HEADER-->
+      <div class="row yudi-table yudi-table-header">
+        <div class="col-md-3">Name <i class="fas fa-sort"></i></div>
+        <div class="col-md-3">Created On <i class="fas fa-sort"></i></div>
+        <div class="col-md-3">Updated On <i class="fas fa-sort"></i></div>
+        <div class="col-md-3">Status <i class="fas fa-sort"></i></div>
+      </div>
+      <!--TABLE CONTENT-->
+      <div id="projectContentRows">
+        <div id="loading1">
+          <img src="../../resources/images/loading-ring.gif">
+          <div>Loading...</div>
+        </div>
+      </div>
 
     </section>
 
