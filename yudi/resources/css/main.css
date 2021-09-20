@@ -4,6 +4,7 @@
   --color-white-1: #fdfdfd;
   --color-violet: #ad63ad;
   --color-yellow: #ffd903;
+  --color-blue: #1a73e8;
   --color-grey-1: #444444;
   --color-transparent-black: rgba(000,000,000,0.1);
 }
@@ -30,9 +31,12 @@ section {
   margin: 30px 40px 0px 40px;
 }
 
-.page-title {
+.page-title > span {
   font-weight: bold;
   font-size: 30px;
+}
+.page-title-create-btn {
+  float: right;
 }
 
 /* USERS */
@@ -40,9 +44,13 @@ section {
   margin: 10px 0px 20px 0px;;
 }
 .yudi-users > a > img {
+  margin-right: 5px;
   border-radius: 100px;
   border: 3px solid rgba(000,000,000,0.2);
   height: 40px;
+}
+.yudi-users > a > img:hover {
+  border: 3px solid var(--color-blue);
 }
 
 /* TABLE */
