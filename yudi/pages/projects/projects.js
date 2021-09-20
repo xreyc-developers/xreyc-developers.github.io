@@ -21,15 +21,18 @@ const APP = (function() {
   // USER EVENT LISTENER
   function addUserEventListeners(userList) {
     for (let i = 0; i < userList.length; i++) {
-      document.getElementById(userList[i]).addEventListener('click', () => {
-        console.log("USER: " + userList[i]);
-      })
+      const userEl = document.getElementById(userList[i]);
+      userEl.addEventListener('click', () => {
+        loadProjects(addProjectEventListeners);
+      });
     }
   }
 
+  // PROJECT EVENT LISTENERS
   function addProjectEventListeners(projectList) {
     for (let i = 0; i < projectList.length; i++) {
-      document.getElementById(projectList[i]).addEventListener('click', () => {
+      const projectEl = document.getElementById(projectList[i]);
+      projectEl.addEventListener('click', () => {
         console.log("PROJECT: " + projectList[i]);
       })
     }
