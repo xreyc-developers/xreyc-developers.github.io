@@ -5,17 +5,24 @@ import { createProject } from '../../modules/firebase/projects/createProject.js'
 import { loadUsers } from '../../components/users/users_top_list.js';
 import { loadProjects } from '../../components/projects/projects_tables.js';
 
-window.logoutUser = logoutUser;
-
 const APP = (function() {
   document.addEventListener('DOMContentLoaded',init);
   // INITIALIZE APPLICATION
   function init() {
     // CHECK AUTHENTICATION
     checkAuth();
+    // EVENT LISTENERS
+    addEventListeners();
     // GET DATA PREPARATION
     loadUsers(addUserEventListeners);
     loadProjects(addProjectEventListeners);
+  }
+
+  // ADD EVENT LISTENERS
+  function addEventListeners() {
+    document.querySelector('#logoutBtn').addEventListener('click', () => {
+      logoutUser();
+    })
   }
 
   // USER EVENT LISTENER
