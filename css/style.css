@@ -100,6 +100,15 @@ h1, h2, h3, h4, h5, h6, figure {
   background: var(--color-primary);
 }
 
+.fh-nav-a>a {
+  color: var(--color-light-grey);
+}
+.fh-nav-a>a:hover {
+  cursor: pointer;
+  border-bottom: 3px solid var(--color-light-pink);
+}
+
+
 #fh5co-header,
 .fh5co-cover {
   background-color: transparent;
@@ -141,6 +150,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .display-tc>h3>span {
   color: var(--color-primary);
   font-size: 18px;
+  font-weight: bold;
 }
 
 
